@@ -1,0 +1,13 @@
+interface:
+  display_name: "Priorify Agent Work"
+  short_description: "Claim and coordinate delegated agent work"
+  brand_color: "#C86B46"
+  default_prompt: "Use $priorify-agent-work to check my work inbox and summarize what is ready to claim."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "priorify"
+      description: "Priorify's permission-scoped delegated work server"
+      transport: "streamable_http"
+      url: "https://priorify.app/mcp"

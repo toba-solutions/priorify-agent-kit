@@ -1,0 +1,51 @@
+name: Compatibility problem
+description: Report a reproducible skill or package problem.
+title: "[Compatibility]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include credentials or private Priorify data. Report security issues using SECURITY.md.
+  - type: dropdown
+    id: client
+    attributes:
+      label: Agent client
+      options:
+        - ChatGPT or Codex
+        - Claude Code or Cowork
+        - Cursor
+        - GitHub Copilot or VS Code
+        - Gemini CLI
+        - Grok
+        - Other Agent Skills or Agent Plugins client
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Agent Kit version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the expected and observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest safe reproduction without private data.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed tokens, credentials, customer data, and private workspace information.
+          required: true

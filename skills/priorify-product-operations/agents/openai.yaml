@@ -1,0 +1,13 @@
+interface:
+  display_name: "Priorify Product Operations"
+  short_description: "Review and prioritize product work in Priorify"
+  brand_color: "#C86B46"
+  default_prompt: "Use $priorify-product-operations to review my products and recommend the highest-priority work."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "priorify"
+      description: "Priorify's permission-scoped product operations server"
+      transport: "streamable_http"
+      url: "https://priorify.app/mcp"

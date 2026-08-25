@@ -1,0 +1,15 @@
+{
+  "name": "priorify",
+  "version": "0.1.0",
+  "description": "Connect Claude Code and Cowork to permission-scoped Priorify product operations.",
+  "author": {
+    "name": "Toba UG (haftungsbeschränkt)",
+    "email": "support@toba.solutions",
+    "url": "https://priorify.app"
+  },
+  "homepage": "https://priorify.app/docs/mcp",
+  "repository": "https://github.com/toba-solutions/priorify-agent-kit",
+  "license": "MIT",
+  "keywords": ["product-operations", "social-planning", "agent-work", "mcp"],
+  "mcpServers": "./.mcp.json"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "priorify",
+  "version": "0.1.0",
+  "description": "Connect ChatGPT and Codex to permission-scoped Priorify product operations.",
+  "author": {
+    "name": "Toba UG (haftungsbeschränkt)",
+    "email": "support@toba.solutions",
+    "url": "https://priorify.app"
+  },
+  "homepage": "https://priorify.app/docs/mcp",
+  "repository": "https://github.com/toba-solutions/priorify-agent-kit",
+  "license": "MIT",
+  "keywords": ["product-operations", "social-planning", "agent-work", "mcp"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Priorify",
+    "shortDescription": "Plan and run product work with Priorify.",
+    "longDescription": "Review product context, plan social content, coordinate delegated agent work, and perform permission-scoped Priorify actions from ChatGPT and Codex.",
+    "developerName": "Toba UG (haftungsbeschränkt)",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://priorify.app",
+    "privacyPolicyURL": "https://priorify.app/privacy",
+    "termsOfServiceURL": "https://priorify.app/terms",
+    "defaultPrompt": [
+      "Triage my Priorify work and recommend what to do next.",
+      "Review my Priorify social calendar and identify content gaps.",
+      "Check my delegated agent work and summarize what is ready."
+    ],
+    "brandColor": "#C86B46"
+  },
+  "mcpServers": "./.mcp.json"
+}

@@ -1,0 +1,46 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build release packages
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+
+      - name: Verify tag and packages
+        shell: bash
+        run: |
+          VERSION="$(node -p "JSON.parse(require('fs').readFileSync('package.json')).version")"
+          test "$GITHUB_REF_NAME" = "v$VERSION"
+          npm run check
+
+      - name: Create release archives
+        shell: bash
+        run: |
+          VERSION="$(node -p "JSON.parse(require('fs').readFileSync('package.json')).version")"
+          mkdir -p dist/releases
+          for PACKAGE in agent-plugin openai claude gemini; do
+            (cd "dist/packages/$PACKAGE" && zip -qr "../../releases/priorify-$PACKAGE-$VERSION.zip" .)
+          done
+          (cd dist/releases && sha256sum ./*.zip > SHA256SUMS)
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/releases/* --verify-tag --generate-notes --title "Priorify Agent Kit $GITHUB_REF_NAME"

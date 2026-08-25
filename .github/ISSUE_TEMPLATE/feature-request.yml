@@ -1,0 +1,24 @@
+name: Skill or compatibility request
+description: Suggest a portable workflow or client improvement.
+title: "[Request]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: User scenario
+      description: What should a person be able to ask their agent to do?
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Expected outcome
+      description: Describe observable behavior rather than a preferred wording.
+    validations:
+      required: true
+  - type: input
+    id: clients
+    attributes:
+      label: Relevant clients
+      placeholder: Codex, Claude Code, Cursor...

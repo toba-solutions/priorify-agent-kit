@@ -1,0 +1,13 @@
+interface:
+  display_name: "Priorify Social Planning"
+  short_description: "Plan owned social content and calendars"
+  brand_color: "#C86B46"
+  default_prompt: "Use $priorify-social-planning to review my social calendar and propose the next two weeks of content."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "priorify"
+      description: "Priorify's permission-scoped social planning server"
+      transport: "streamable_http"
+      url: "https://priorify.app/mcp"

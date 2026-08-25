@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Priorify support
+    url: https://priorify.app/docs/mcp
+    about: Account, OAuth, billing, and private workspace questions.
+  - name: Security report
+    url: https://github.com/toba-solutions/priorify-agent-kit/security/policy
+    about: Report vulnerabilities privately; never include a live credential.
