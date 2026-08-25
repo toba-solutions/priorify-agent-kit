@@ -38,6 +38,10 @@ Safety rules:
 - Do not include chain-of-thought. Report only prompts, observable behavior,
   sanitized evidence, identifiers shortened or redacted where appropriate, and
   conclusions.
+- Treat connection isolation as a hard preflight gate. If any Priorify read
+  exposes a production workspace, product, record, or queued work item, perform
+  no mutation or claim in that session. Mark the affected cases BLOCKED, report
+  only sanitized counts, and ask the human for an isolated test connection.
 - Do not test external social publishing. Priorify social planning is
   planning-only; no test may publish to a social network.
 - If a required test fixture or permission is unavailable, mark that case
@@ -54,24 +58,33 @@ Record:
 - Agent Kit commit SHA or release version;
 - installation method;
 - whether this is a fresh client profile;
-- whether Priorify had previously been connected.
+- whether Priorify had previously been connected; and
+- any pre-existing Priorify MCP, plugin, or skill and the client-reported source
+  from which it was loaded.
 
 Do not record credentials or full private workspace identifiers.
 
 Phase 2 — Install and validate the package
 
-1. Clone or download the repository.
+1. Clone or download the repository into a persistent test directory. Do not
+   install a plugin from a temporary directory that will be deleted during the
+   test.
 2. Select the native package layout for this client. The repository root
    contains Agent Plugins, Codex/OpenAI, Claude, and Gemini manifests around the
    same canonical skills directory.
 3. Use the client's documented plugin, extension, or Agent Skills installation
    workflow. Do not modify the skill text to make installation succeed.
-4. Record whether the client recognized the package without warnings.
-5. Confirm discovery of exactly these skills:
+4. If the client caches tools or skills per conversation, start a new session
+   after installation before evaluating discovery or behavior.
+5. Record whether the client recognized the package without warnings.
+6. Confirm that the package itself contributes exactly these skills:
    - priorify-product-operations
    - priorify-social-planning
    - priorify-agent-work
-6. If the client has a native package validator, run it and record the result.
+   Report unrelated pre-existing skills separately with their source; do not
+   attribute them to the kit. A legacy `priorify-work` skill is not part of this
+   package and should be disabled before behavioral testing.
+7. If the client has a native package validator, run it and record the result.
 
 Phase 3 — Connect and authorize Priorify
 
@@ -83,7 +96,10 @@ Phase 3 — Connect and authorize Priorify
 4. Record whether authorization completed once, whether the client returned from
    the browser correctly, and whether the first read succeeded.
 5. Verify that returned data is limited to the workspace/product scope approved
-   by the human. Report only counts and redacted identifiers.
+   by the human. Report only counts and redacted identifiers. If any non-test
+   workspace, product, record, or work item is visible, stop before Phase 4 and
+   mark all mutation, claim, revocation, and permission cases BLOCKED until the
+   human supplies an isolated Agent connection.
 
 Phase 4 — Product-operations behavior
 
@@ -217,6 +233,11 @@ Return a Markdown report with:
    occurred.
 8. Recommended release decision: ship, ship after fixes, or do not ship.
 
+Classify every finding as one of: Agent Kit defect, Priorify MCP/service defect,
+client limitation, contaminated client profile, or missing test fixture. Do not
+assign an Agent Kit failure to an unrelated pre-existing skill or to a test
+connection that violated the fixture requirements.
+
 For every failure, include the smallest safe reproduction. Do not propose a fix
 unless the evidence supports it, and do not change the repository during this
 independent test.
@@ -232,7 +253,8 @@ Before giving the prompt to a tester, prepare:
 - one disposable task for preview/write testing;
 - one owned social account record and a small test calendar;
 - one disposable queued agent-work item;
-- an Agent connection with normal test grants;
+- an isolated Agent connection with normal test grants that exposes only the
+  dedicated test workspace/product;
 - a second read-only connection or a planned temporary grant reduction;
 - permission to deactivate/reactivate the test connection; and
 - a record of the starting state so mutations can be verified and cleaned up.

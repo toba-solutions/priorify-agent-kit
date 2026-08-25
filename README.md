@@ -75,6 +75,21 @@ claude --plugin-dir /absolute/path/to/priorify-agent-kit
 gemini extensions install https://github.com/toba-solutions/priorify-agent-kit
 ```
 
+#### Grok CLI
+
+Keep the clone in a persistent directory, then validate and install it:
+
+```bash
+grok plugin validate /absolute/path/to/priorify-agent-kit
+grok plugin install /absolute/path/to/priorify-agent-kit --trust
+```
+
+Review the plugin before accepting `--trust`. Start a new Grok session after
+installation so its advertised skill list and MCP configuration are refreshed.
+If `grok inspect` shows a pre-existing `priorify-work` skill, disable that legacy
+skill at its source before testing this kit; it is not part of Priorify Agent
+Kit and can otherwise compete with the three canonical skills.
+
 #### Agent Skills fallback
 
 Codex, Cursor, GitHub Copilot, Gemini CLI, and other compatible clients can

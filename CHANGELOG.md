@@ -6,6 +6,15 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Added Grok-specific installation, trust, persistent-clone, new-session, and
+  legacy-skill collision guidance based on independent client acceptance.
+- Strengthened the acceptance-test preflight so any production data visible to
+  the connection blocks all mutations and claims.
+- Required reports to distinguish kit defects from client-profile and fixture
+  limitations.
+
 ## [0.1.0] - 2026-08-25
 
 ### Added
