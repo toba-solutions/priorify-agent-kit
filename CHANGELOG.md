@@ -6,15 +6,6 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-### Changed
-
-- Added Grok-specific installation, trust, persistent-clone, new-session, and
-  legacy-skill collision guidance based on independent client acceptance.
-- Strengthened the acceptance-test preflight so any production data visible to
-  the connection blocks all mutations and claims.
-- Required reports to distinguish kit defects from client-profile and fixture
-  limitations.
-
 ## [0.1.0] - 2026-08-25
 
 ### Added
@@ -26,6 +17,15 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Independent cross-client acceptance-test instructions for Claude, Grok, and
   other tool-using agents.
 - Repository-owned branding assets and commit-pinned GitHub Actions.
+
+### Changed
+
+- Added Grok-specific installation, trust, persistent-clone, new-session, and
+  legacy-skill collision guidance based on independent client acceptance.
+- Strengthened the acceptance-test preflight so any production data visible to
+  the connection blocks all mutations and claims.
+- Required reports to distinguish kit defects from client-profile and fixture
+  limitations.
 
 [Unreleased]: https://github.com/toba-solutions/priorify-agent-kit/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/toba-solutions/priorify-agent-kit/releases/tag/v0.1.0

@@ -12,7 +12,7 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-C86B46.svg)](LICENSE)
   [![Agent Skills](https://img.shields.io/badge/standard-Agent%20Skills-2F6F66)](https://agentskills.io/)
 
-  [Priorify](https://priorify.app) · [MCP documentation](https://priorify.app/docs/mcp) · [Releases](https://github.com/toba-solutions/priorify-agent-kit/releases)
+  [Priorify](https://priorify.app) · [Agent Skills catalogue](https://priorify.app/skills) · [MCP documentation](https://priorify.app/docs/mcp) · [Releases](https://github.com/toba-solutions/priorify-agent-kit/releases)
 </div>
 
 Priorify Agent Kit is the official collection of portable Agent Skills and
@@ -184,6 +184,7 @@ secret-free evidence report.
 
 - Usage questions: [support@toba.solutions](mailto:support@toba.solutions)
 - Product documentation: [priorify.app/docs/mcp](https://priorify.app/docs/mcp)
+- Human-readable skill catalogue: [priorify.app/skills](https://priorify.app/skills)
 - Security reports: follow [SECURITY.md](SECURITY.md); do not open a public issue
   for a suspected vulnerability.
 
