@@ -15,6 +15,7 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Require delegated work to respect dependency blocks, recommendation-only
   assignment, and human intervention answers.
 - Tell Grok operators to refresh a cached MCP session after a catalogue change.
+- Add a lockfile for the dependency-free package so the push-time audit can run.
 
 ## [0.1.0] - 2026-08-25
 
