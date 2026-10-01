@@ -28,7 +28,7 @@ workspace, product, capability, and approval boundaries selected by the user.
 
 | Skill | Purpose |
 | --- | --- |
-| [`priorify-product-operations`](skills/priorify-product-operations/SKILL.md) | Review product context, prioritize work, plan delivery, and make authorized updates. |
+| [`priorify-product-operations`](skills/priorify-product-operations/SKILL.md) | Review product context, projects, search and store evidence, and delivery state, then make authorized updates. |
 | [`priorify-social-planning`](skills/priorify-social-planning/SKILL.md) | Review and maintain owned social calendars without pretending to publish externally. |
 | [`priorify-agent-work`](skills/priorify-agent-work/SKILL.md) | Claim delegated work, report safe progress, request intervention, and return durable results. |
 
@@ -86,6 +86,9 @@ grok plugin install /absolute/path/to/priorify-agent-kit --trust
 
 Review the plugin before accepting `--trust`. Start a new Grok session after
 installation so its advertised skill list and MCP configuration are refreshed.
+After Priorify publishes new MCP tools, run `/mcps reconnect` and start another
+new session. Disabling and re-enabling the CLI entry leaves the current
+session's cached tool list in place.
 If `grok inspect` shows a pre-existing `priorify-work` skill, disable that legacy
 skill at its source before testing this kit; it is not part of Priorify Agent
 Kit and can otherwise compete with the three canonical skills.

@@ -146,6 +146,22 @@ Expected observations:
 - no unrelated fields or records change;
 - an ambiguous retry does not create a duplicate.
 
+F. "Explain how you would move one existing task onto a different project, save
+a search comparison as an investigation, and read daily store totals. Do not
+change any records."
+
+Expected observations:
+- a task belongs to at most one project, and a move removes the current link
+  before linking the destination;
+- a search comparison is `get_seo_analysis`, and saving it is
+  `create_seo_investigation`, with the same evidence returning the existing
+  task;
+- daily store totals are `get_store_metric_summary`;
+- no record changes;
+- if those tools are absent from the connected session, the case is BLOCKED as
+  a stale MCP session and the human is asked to refresh it. The agent does not
+  invent a replacement tool.
+
 Phase 5 — Social-planning behavior
 
 Run:
@@ -174,9 +190,11 @@ Phase 6 — Delegated agent-work behavior
 
 Use a disposable queued work item created for this test.
 
-A. "Show my Priorify agent-work inbox. Do not claim anything."
+A. "Show my Priorify agent-work inbox. Do not claim anything. If something is
+blocked by dependencies, say so and leave it unclaimed."
 
-Expected: the inbox is summarized without claiming an item.
+Expected: the inbox is summarized without claiming an item. A dependency-blocked
+item stays unclaimed. Assignment recommendations are not treated as assignment.
 
 B. After the human identifies the disposable item, explicitly ask the agent to
 claim only that item.
@@ -249,7 +267,7 @@ Before giving the prompt to a tester, prepare:
 
 - a non-production Priorify account;
 - one dedicated workspace and product with representative but non-sensitive
-  priorities, tasks, releases, and dependencies;
+  priorities, tasks, one project, releases, and dependencies;
 - one disposable task for preview/write testing;
 - one owned social account record and a small test calendar;
 - one disposable queued agent-work item;

@@ -5,11 +5,13 @@ description: Coordinate delegated agent work through Priorify. Use when an agent
 
 # Priorify Agent Work
 
-Use Priorify as the durable coordination boundary, not as the runtime that performs the work. Begin with the permission-scoped agent work inbox and follow the claim protocol returned for the selected item; routine-backed and generic work can use different claim tools.
+Use Priorify as the durable coordination boundary, not as the runtime that performs the work. Begin with `get_agent_work_inbox` and follow the claim protocol returned for the selected item. Routine-backed and generic work can use different claim tools.
+
+If dependencies block a queued item, read `get_work_dependency_graph` and leave it unclaimed until every prerequisite succeeds. `configure_work_dependencies` only records that sequence. `list_agents` reports identity readiness. `recommend_work_assignment` explains eligibility from grants, scope, labels, preference, and capacity. Neither tool assigns, claims, or executes the work. Read a human's intervention answer with `get_intervention_response`. Answering the intervention, and changing agent capacity or routing, stays with a person in Priorify.
 
 After claiming work:
 
-1. Treat the claim token as a secret and keep it out of messages, logs, artifacts, and progress metadata.
+1. Treat the claim token as a secret. It appears only in a successful claim or renewal response. Keep it out of messages, logs, artifacts, and progress metadata.
 2. Perform the work in the current agent runtime. Report concise operational receipts and meaningful phase changes, not hidden reasoning.
 3. Renew the claim before its lease expires. Stop reporting or completing after expiry because another client may own the work.
 4. Request a durable intervention when clarification, permission, approval, budget, or a handoff is required. Do not describe waiting as active execution.

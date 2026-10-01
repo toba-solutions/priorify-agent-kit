@@ -6,6 +6,16 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Teach product operations the project, search, store, portfolio, upload, and
+  workflow lifecycles now exposed by the Priorify MCP server.
+- Keep owned social accounts, calendar items, product surfaces, and earned
+  placements distinct.
+- Require delegated work to respect dependency blocks, recommendation-only
+  assignment, and human intervention answers.
+- Tell Grok operators to refresh a cached MCP session after a catalogue change.
+
 ## [0.1.0] - 2026-08-25
 
 ### Added

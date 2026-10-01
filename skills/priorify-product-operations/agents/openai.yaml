@@ -1,6 +1,6 @@
 interface:
   display_name: "Priorify Product Operations"
-  short_description: "Review and prioritize product work in Priorify"
+  short_description: "Review and update product, project, and growth work"
   brand_color: "#C86B46"
   default_prompt: "Use $priorify-product-operations to review my products and recommend the highest-priority work."
 

@@ -7,7 +7,9 @@ description: Plan and maintain owned social calendars in Priorify. Use when a re
 
 Use the Priorify MCP server at `https://priorify.app/mcp` as the source of truth. Resolve the workspace and product before reading its owned social accounts or calendar.
 
-Start by reading the current social plan and the operation catalog when field choices or lifecycle rules are needed. Keep owned accounts, individual plan items, and recurring social work distinct. When proposing a plan, make the account, locale, activity type, intended date and time zone, draft copy, asset dependencies, and current status clear.
+Start by reading the current social plan and the operation catalog when field choices or lifecycle rules are needed. Owned accounts are `social_account` records. Calendar entries are `social_plan_item` records. Attach recurring engagement with `put_social_routine_link`. Keep those three distinct from `platform_presence`, which is a deployable product surface, and from a `distribution_item` whose opportunity type is social, which is a third-party earned placement.
+
+When proposing a plan, make the account, locale, activity type, intended date and time zone, draft copy, asset dependencies, and current status clear.
 
 Priorify's social workflow records plans; it does not publish to external social networks. Never represent a planned, approved, or recorded-as-published item as proof that an external post exists. Do not invent handles, performance metrics, publication results, or provider state.
 
