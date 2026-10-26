@@ -16,6 +16,11 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   assignment, and human intervention answers.
 - Tell Grok operators to refresh a cached MCP session after a catalogue change.
 - Add a lockfile for the dependency-free package so the push-time audit can run.
+- Teach product operations the Knowledge lifecycle: scoped collections, hidden
+  private collections and the access handoff, page revisions, file uploads and
+  authenticated downloads, links, tasks from pages, and public-sharing consent.
+- Document `put_task` waiting details and how to clear them.
+- Document `delete_budget_settings` for removing one currency's budget limits.
 
 ## [0.1.0] - 2026-08-25
 
