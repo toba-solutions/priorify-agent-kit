@@ -28,7 +28,7 @@ workspace, product, capability, and approval boundaries selected by the user.
 
 | Skill | Purpose |
 | --- | --- |
-| [`priorify-product-operations`](skills/priorify-product-operations/SKILL.md) | Review product context, projects, search and store evidence, and delivery state, then make authorized updates. |
+| [`priorify-product-operations`](skills/priorify-product-operations/SKILL.md) | Review product context, projects, Knowledge, search and store evidence, and delivery state, then make authorized updates. |
 | [`priorify-social-planning`](skills/priorify-social-planning/SKILL.md) | Review and maintain owned social calendars without pretending to publish externally. |
 | [`priorify-agent-work`](skills/priorify-agent-work/SKILL.md) | Claim delegated work, report safe progress, request intervention, and return durable results. |
 
