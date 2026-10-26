@@ -17,7 +17,7 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 - Teach product operations the project, search, store, portfolio, upload, and
-  workflow lifecycles now exposed by the Priorify MCP server.
+  workflow lifecycles now exposed by the Priorify.app MCP server.
 - Keep owned social accounts, calendar items, product surfaces, and earned
   placements distinct.
 - Require delegated work to respect dependency blocks, recommendation-only
@@ -34,7 +34,7 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
-- Portable Agent Plugins package for the hosted Priorify MCP server.
+- Portable Agent Plugins package for the hosted Priorify.app MCP server.
 - Native ChatGPT/Codex, Claude, and Gemini package manifests.
 - Product operations, social planning, and delegated agent-work skills.
 - Deterministic package generation, validation, and release automation.
