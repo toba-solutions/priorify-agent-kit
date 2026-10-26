@@ -6,6 +6,21 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-26
+
+### Added
+
+- Custom task board columns: `list_task_columns` and `put_task` with
+  `board_column_id`.
+- Completeness checks that name what is missing, what satisfies each check,
+  and which gaps need a person; scores in `list_products`.
+- Metrics snapshots as structured timeline events.
+
+### Changed
+
+- Say that ids are omitted on create, that the first asset of a type becomes
+  current, and that integration setup requests need only integrations write.
+
 ## [0.2.1] - 2026-10-26
 
 ### Changed
