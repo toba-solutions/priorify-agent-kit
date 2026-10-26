@@ -6,6 +6,8 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-26
+
 ### Changed
 
 - Teach product operations the project, search, store, portfolio, upload, and
@@ -43,5 +45,6 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Required reports to distinguish kit defects from client-profile and fixture
   limitations.
 
-[Unreleased]: https://github.com/toba-solutions/priorify-agent-kit/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/toba-solutions/priorify-agent-kit/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/toba-solutions/priorify-agent-kit/releases/tag/v0.2.0
 [0.1.0]: https://github.com/toba-solutions/priorify-agent-kit/releases/tag/v0.1.0

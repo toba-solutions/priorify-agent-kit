@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "priorify",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Connect agents to permission-scoped product operations, social planning, and delegated work in Priorify.",
   "author": {
     "name": "Toba UG (haftungsbeschränkt)",
