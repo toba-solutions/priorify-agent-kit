@@ -1,6 +1,6 @@
 # Compatibility and installation
 
-Priorify Agent Kit uses the open Agent Skills folder format for its canonical
+Priorify.app Agent Kit uses the open Agent Skills folder format for its canonical
 instructions and supplies several thin package manifests around the same
 `skills/` directory.
 
@@ -61,9 +61,9 @@ top-level Grok agent definition.
 
 All packages point to `https://priorify.app/mcp`. The MCP client is responsible
 for OAuth discovery, browser authorization, and secure credential storage. The
-package contains no token and cannot pre-authorize a Priorify workspace.
+package contains no token and cannot pre-authorize a Priorify.app workspace.
 
-After OAuth, Priorify still applies the exact Agent connection, workspace,
+After OAuth, Priorify.app still applies the exact Agent connection, workspace,
 product, capability, access-level, and sensitive-action policy selected by the
 user.
 

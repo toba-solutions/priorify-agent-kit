@@ -86,16 +86,16 @@ if (
   portableMcp.mcpServers?.priorify?.type !== "streamable-http" ||
   portableMcp.mcpServers?.priorify?.url !== mcpEndpoint
 ) {
-  fail("mcp.json must declare the portable Streamable HTTP Priorify endpoint.");
+  fail("mcp.json must declare the portable Streamable HTTP Priorify.app endpoint.");
 }
 if (
   nativeMcp.mcpServers?.priorify?.type !== "http" ||
   nativeMcp.mcpServers?.priorify?.url !== mcpEndpoint
 ) {
-  fail(".mcp.json must declare the native HTTP Priorify endpoint.");
+  fail(".mcp.json must declare the native HTTP Priorify.app endpoint.");
 }
 if (manifests[3].mcpServers?.priorify?.httpUrl !== mcpEndpoint) {
-  fail("gemini-extension.json must declare the Priorify HTTP endpoint.");
+  fail("gemini-extension.json must declare the Priorify.app HTTP endpoint.");
 }
 
 const skillDirectories = (await readdir(join(root, "skills"), { withFileTypes: true }))
@@ -156,5 +156,5 @@ const digest = createHash("sha256")
   .digest("hex");
 
 console.log(
-  `Validated Priorify Agent Kit ${packageManifest.version}: ${expectedSkills.length} skills, ${Object.keys(platformFiles).length} packages, source digest ${digest.slice(0, 12)}.`,
+  `Validated Priorify.app Agent Kit ${packageManifest.version}: ${expectedSkills.length} skills, ${Object.keys(platformFiles).length} packages, source digest ${digest.slice(0, 12)}.`,
 );

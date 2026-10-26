@@ -1,6 +1,6 @@
 # Support
 
-## Using Priorify Agent Kit
+## Using Priorify.app Agent Kit
 
 Start with the installation and connection instructions in [README.md](README.md)
 and the client notes in [docs/compatibility.md](docs/compatibility.md).

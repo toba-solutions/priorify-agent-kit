@@ -1,10 +1,10 @@
 # Contributing
 
-Thank you for helping make Priorify work naturally across agent clients.
+Thank you for helping make Priorify.app work naturally across agent clients.
 
 ## Before opening an issue
 
-- Use [Priorify support](mailto:support@toba.solutions) for account,
+- Use [Priorify.app support](mailto:support@toba.solutions) for account,
   authentication, billing, or private workspace questions.
 - Use a GitHub issue for reproducible packaging problems, compatibility gaps,
   documentation improvements, and skill behavior that can be discussed
@@ -18,7 +18,7 @@ Thank you for helping make Priorify work naturally across agent clients.
 3. Keep instructions portable. Vendor-specific UI or dependency metadata
    belongs in the appropriate manifest or `agents/` file.
 4. Preserve user authorization boundaries. A skill must not convert tool
-   availability into permission to mutate Priorify data.
+   availability into permission to mutate Priorify.app data.
 5. Run:
 
    ```bash
@@ -33,10 +33,10 @@ Thank you for helping make Priorify work naturally across agent clients.
 
 - Keep the frontmatter name equal to the skill directory name.
 - Make the description precise enough for reliable automatic discovery.
-- Include only Priorify-specific guidance that changes agent decisions.
+- Include only Priorify.app-specific guidance that changes agent decisions.
 - Keep detailed schemas and tool catalogs out of `SKILL.md`; MCP tool schemas
   remain authoritative.
-- Separate recorded Priorify facts from model recommendations.
+- Separate recorded Priorify.app facts from model recommendations.
 - Never include secrets, customer information, chain-of-thought, or private
   reviewer material.
 

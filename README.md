@@ -1,9 +1,9 @@
 <div align="center">
   <a href="https://priorify.app">
-    <img src="assets/priorify-logo.png" alt="Priorify" width="112" height="112">
+    <img src="assets/priorify-logo.png" alt="Priorify.app" width="112" height="112">
   </a>
 
-  # Priorify Agent Kit
+  # Priorify.app Agent Kit
 
   **Give your coding agent a safe, shared operating context for product work.**
 
@@ -12,16 +12,16 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-C86B46.svg)](LICENSE)
   [![Agent Skills](https://img.shields.io/badge/standard-Agent%20Skills-2F6F66)](https://agentskills.io/)
 
-  [Priorify](https://priorify.app) · [Agent Skills catalogue](https://priorify.app/skills) · [MCP documentation](https://priorify.app/docs/mcp) · [Releases](https://github.com/toba-solutions/priorify-agent-kit/releases)
+  [Priorify.app](https://priorify.app) · [Agent Skills catalogue](https://priorify.app/skills) · [MCP documentation](https://priorify.app/docs/mcp) · [Releases](https://github.com/toba-solutions/priorify-agent-kit/releases)
 </div>
 
-Priorify Agent Kit is the official collection of portable Agent Skills and
-plugin manifests for using [Priorify](https://priorify.app) through its hosted
+Priorify.app Agent Kit is the official collection of portable Agent Skills and
+plugin manifests for using [Priorify.app](https://priorify.app) through its hosted
 MCP server. One repository works with Codex, Claude Code, Cursor, GitHub
 Copilot, Gemini CLI, Grok, and other Agent Skills or Agent Plugins clients.
 
 The kit contains instructions and connection metadata only. Product data stays
-in Priorify, authentication uses OAuth, and every agent remains limited by the
+in Priorify.app, authentication uses OAuth, and every agent remains limited by the
 workspace, product, capability, and approval boundaries selected by the user.
 
 ## Included skills
@@ -86,11 +86,11 @@ grok plugin install /absolute/path/to/priorify-agent-kit --trust
 
 Review the plugin before accepting `--trust`. Start a new Grok session after
 installation so its advertised skill list and MCP configuration are refreshed.
-After Priorify publishes new MCP tools, run `/mcps reconnect` and start another
+After Priorify.app publishes new MCP tools, run `/mcps reconnect` and start another
 new session. Disabling and re-enabling the CLI entry leaves the current
 session's cached tool list in place.
 If `grok inspect` shows a pre-existing `priorify-work` skill, disable that legacy
-skill at its source before testing this kit; it is not part of Priorify Agent
+skill at its source before testing this kit; it is not part of Priorify.app Agent
 Kit and can otherwise compete with the three canonical skills.
 
 #### Agent Skills fallback
@@ -107,7 +107,7 @@ For native plugin installers, point the client at this repository or use its
 platform-specific ZIP from a release. See [compatibility and installation
 notes](docs/compatibility.md) for the supported package layouts.
 
-## Connect Priorify
+## Connect Priorify.app
 
 Every package points to the same Streamable HTTP MCP endpoint:
 
@@ -116,11 +116,11 @@ https://priorify.app/mcp
 ```
 
 Installation and authorization are separate. On first use, your client may ask
-you to sign in to Priorify and approve a connection. That OAuth connection does
+you to sign in to Priorify.app and approve a connection. That OAuth connection does
 not automatically grant access to every workspace or capability.
 
 If an authenticated call returns `connection_inactive`, open
-**Priorify → Settings → Agent connections**. Repeating OAuth will not repair an
+**Priorify.app → Settings → Agent connections**. Repeating OAuth will not repair an
 inactive workspace binding.
 
 ## Safety model
@@ -128,7 +128,7 @@ inactive workspace binding.
 - Skills may recommend actions, but they do not authorize writes.
 - Priority, status, assignment, budget, publication, and permission changes
   require explicit user intent.
-- Priorify's previews, expected versions, idempotency keys, capability grants,
+- Priorify.app's previews, expected versions, idempotency keys, capability grants,
   and approval controls remain authoritative.
 - Social planning records plans and lifecycle state; it does not publish to
   social networks.
@@ -194,5 +194,5 @@ secret-free evidence report.
 ## License
 
 The Agent Skills and packaging files in this repository are available under the
-[MIT License](LICENSE). The Priorify service, trademarks, and hosted product are
+[MIT License](LICENSE). The Priorify.app service, trademarks, and hosted product are
 not granted under this repository license.

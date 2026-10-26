@@ -51,5 +51,5 @@ await writeFile(
 
 const built = await readdir(outputRoot);
 console.log(
-  `Built ${built.length} Priorify ${built.length === 1 ? "package" : "packages"} in ${relative(root, outputRoot)}.`,
+  `Built ${built.length} Priorify.app ${built.length === 1 ? "package" : "packages"} in ${relative(root, outputRoot)}.`,
 );

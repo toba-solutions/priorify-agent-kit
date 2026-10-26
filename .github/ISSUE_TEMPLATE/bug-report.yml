@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Do not include credentials or private Priorify data. Report security issues using SECURITY.md.
+        Do not include credentials or private Priorify.app data. Report security issues using SECURITY.md.
   - type: dropdown
     id: client
     attributes:

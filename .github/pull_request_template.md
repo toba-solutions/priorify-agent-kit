@@ -12,4 +12,4 @@ List the clients or package formats affected.
 - [ ] I ran `npm run check`.
 - [ ] I tested a realistic user request or packaging workflow.
 - [ ] I included no credentials, customer data, private URLs, or reviewer accounts.
-- [ ] I preserved Priorify authorization and approval boundaries.
+- [ ] I preserved Priorify.app authorization and approval boundaries.
