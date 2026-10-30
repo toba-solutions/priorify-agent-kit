@@ -6,6 +6,22 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-30
+
+### Added
+
+- Sub-tasks and links between tasks: `put_task` with `parent_task_id`,
+  `list_task_relations`, `put_task_relation`, and `remove_task_relation`,
+  including how to close a duplicate.
+- The shared manual board order: `reorder_tasks` and `manual_position` in
+  `list_tasks`.
+- Comment threads, mentions, and reactions: `add_task_comment` with
+  `parent_comment_id` and the mention syntax, `resolve_task_comment_thread`,
+  and `put_task_comment_reaction`.
+- Saved task views: `list_task_views` and the filter syntax views use.
+- Agent work: inbox mentions and `mark_task_mentions_read`, and work that
+  waits on open blocking tasks (`task_blocked`, `task_blockers`).
+
 ## [0.3.0] - 2026-10-26
 
 ### Added
