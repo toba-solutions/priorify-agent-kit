@@ -1,6 +1,6 @@
 {
   "name": "priorify",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Connect ChatGPT and Codex to permission-scoped Priorify.app product operations.",
   "author": {
     "name": "Toba UG (haftungsbeschränkt)",

@@ -6,6 +6,13 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-10-30
+
+### Fixed
+
+- The agent sessions skill now carries the `connection_inactive` guidance every
+  skill gives.
+
 ## [0.5.0] - 2026-10-30
 
 ### Added
