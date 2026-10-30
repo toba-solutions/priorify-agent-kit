@@ -31,6 +31,32 @@ workspace, product, capability, and approval boundaries selected by the user.
 | [`priorify-product-operations`](skills/priorify-product-operations/SKILL.md) | Review product context, projects, Knowledge, search and store evidence, and delivery state, then make authorized updates. |
 | [`priorify-social-planning`](skills/priorify-social-planning/SKILL.md) | Review and maintain owned social calendars without pretending to publish externally. |
 | [`priorify-agent-work`](skills/priorify-agent-work/SKILL.md) | Claim delegated work, report safe progress, request intervention, and return durable results. |
+| [`priorify-agent-sessions`](skills/priorify-agent-sessions/SKILL.md) | Report what a chat is doing: start a session, report milestones, ask a person to decide, and end it. |
+
+### Report your chats
+
+Paste this into `CLAUDE.md`, `AGENTS.md` or `GEMINI.md` in each repository so
+its chats appear on the Agent activity page in Priorify.app. Replace
+`<product id>` with the id of the product the repository belongs to; it is in
+the product page URL, and `list_products` returns it.
+
+```markdown
+## Report your chats to Priorify.app
+
+This repository belongs to Priorify.app product `<product id>` (copy it from the product page URL or `list_products`). Every call also needs that product's `workspace_id`: `list_products` returns it, and the app URL shows it as `workspace=`. Priorify.app only shows what you report; it never runs or wakes you.
+
+- When a substantial piece of work starts, call `start_agent_session` with that `product_id`, a one-line `goal`, your client name as `client_label`, the repository or folder and branch as `locator`, the link to this chat as `chat_url` if your client has one, and a `client_session_key`:
+  - Claude Code: the value of the environment variable `CLAUDE_CODE_SESSION_ID`.
+  - Another client: its own session or thread id, if it exposes one.
+  - Otherwise `<client>:<repository>:<branch>:<yyyy-mm-dd>` (letters, digits, `.`, `_`, `:` and `-` only; write any other character, such as a space or the `/` in a branch name, as `-`), with a short word added if a second chat uses the same branch on the same day.
+- After a context reset, call `list_agent_sessions` with `mine: true` and match the `locator`; if one matches, keep reporting to that session's `id` instead of starting a new one.
+- Call `report_agent_session` at each milestone and whenever the plan or your next step changes.
+- When a person must decide, call `open_agent_session_question` with what is needed, the situation, the options with their consequences, your recommendation and what it blocks. Keep working on whatever is not blocked. Once they answer in this chat, call `resolve_agent_session_question` with the decision.
+- When you finish, call `end_agent_session` with the outcome (completed, failed or stopped), a short summary and links to what you produced.
+- Never put secrets, credentials or your reasoning in a report. A session never completes a task: update the task itself as you normally would.
+```
+
+The `priorify-agent-sessions` skill teaches the same lifecycle in full.
 
 ## Install
 
@@ -91,7 +117,7 @@ new session. Disabling and re-enabling the CLI entry leaves the current
 session's cached tool list in place.
 If `grok inspect` shows a pre-existing `priorify-work` skill, disable that legacy
 skill at its source before testing this kit; it is not part of Priorify.app Agent
-Kit and can otherwise compete with the three canonical skills.
+Kit and can otherwise compete with the four canonical skills.
 
 #### Agent Skills fallback
 

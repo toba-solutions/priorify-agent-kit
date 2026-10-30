@@ -6,6 +6,20 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-30
+
+### Added
+
+- Live agent sessions in the new `priorify-agent-sessions` skill:
+  `start_agent_session`, `report_agent_session`,
+  `open_agent_session_question`, `resolve_agent_session_question`,
+  `end_agent_session`, and `list_agent_sessions`. It covers the stable
+  `client_session_key`, reporting at milestones only, questions a person
+  answers in the chat, the three outcomes, and why a session never claims,
+  completes, or authorizes anything.
+- The project-instructions snippet that makes an agent report each chat, in the
+  README.
+
 ## [0.4.0] - 2026-10-30
 
 ### Added

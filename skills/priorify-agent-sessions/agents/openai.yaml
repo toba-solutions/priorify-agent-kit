@@ -1,0 +1,13 @@
+interface:
+  display_name: "Priorify.app Agent Sessions"
+  short_description: "Report what each chat is doing"
+  brand_color: "#C86B46"
+  default_prompt: "Use $priorify-agent-sessions to start a session for this chat and report each milestone."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "priorify"
+      description: "Priorify.app's permission-scoped live agent sessions server"
+      transport: "streamable_http"
+      url: "https://priorify.app/mcp"

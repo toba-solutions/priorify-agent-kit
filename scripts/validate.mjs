@@ -10,6 +10,7 @@ const expectedSkills = [
   "priorify-product-operations",
   "priorify-social-planning",
   "priorify-agent-work",
+  "priorify-agent-sessions",
 ];
 const platformFiles = {
   "agent-plugin": ["plugin.json", "mcp.json", "README.md", "LICENSE"],
