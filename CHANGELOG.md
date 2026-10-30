@@ -6,6 +6,14 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.2] - 2026-10-30
+
+### Fixed
+
+- The agent sessions skill names `session_id` for the calls after
+  `start_agent_session` and no longer says every call takes `product_id`;
+  shortened to leave schema detail to the tools.
+
 ## [0.5.1] - 2026-10-30
 
 ### Fixed

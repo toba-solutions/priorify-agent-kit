@@ -1,6 +1,6 @@
 {
   "name": "priorify",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Connect Claude Code and Cowork to permission-scoped Priorify.app product operations.",
   "author": {
     "name": "Toba UG (haftungsbeschränkt)",
