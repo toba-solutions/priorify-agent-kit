@@ -6,6 +6,25 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-11-02
+
+### Added
+
+- The agent sessions skill teaches `wait_for_agent_session_answer`: after
+  `open_agent_session_question`, call it with `max_wait_seconds: 20` in a loop
+  and do nothing else while waiting, treat `resolved`, `withdrawn` and
+  `no_questions` as the end of the loop, and after 30 minutes without an
+  answer end the turn saying the question is still on the board and call the
+  wait again on the next run. It describes the `acknowledged` answer (`text`,
+  `option`, `answered_by`, `answered_at`), the `open` deadline result, and that
+  the wait is free of agent-operation quota.
+- An answer is a decision input, never a permission: the agent still closes the
+  question with `resolve_agent_session_question` and its decision summary.
+  `list_agent_sessions` shows question states, never answer text.
+- Report at least every 15 minutes with `plan`, `current_step`, `next_step`
+  and `decisions`; the project-instructions snippet in the README now carries
+  both `product_id` and `workspace_id` and the new wait flow.
+
 ## [0.5.2] - 2026-10-30
 
 ### Fixed
