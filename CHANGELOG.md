@@ -6,6 +6,35 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-11-03
+
+### Added
+
+- Task triage and response SLAs: `triage_task`, `list_task_triage_setup`,
+  `put_task_intake_rule`, `put_task_sla_rule`, `save_task_triage_settings`, and
+  the `triage` and `sla` filters of `list_tasks`. Delegated work on a task that
+  waits for acceptance is not claimable until a person accepts it.
+- Task templates (`list_task_templates`, `put_task_template`, `put_task`
+  `template_id`) and category and label colours (`list_task_tag_colors`,
+  `put_task_tag_color`).
+- Inbox, task followers and reminders: `snooze_notifications`,
+  `list_task_subscriptions`, `put_task_subscription`, `set_task_reminder`, and
+  the `needs_you` and `include_snoozed` filters of `list_notifications`.
+- Richer routines: hourly, monthly, quarterly and yearly schedules, start/end
+  bounds, pause, `skip_routine_occurrence`, named-agent routines, revisions
+  (`list_routine_revisions`, `restore_routine_revision`), `duplicate_routine`,
+  and templates (`list_routine_templates`, `put_routine_template`).
+- How to wait on rate limits (`-32029`, `retry_after_seconds`), refresh a
+  token once, keep idempotency keys across retries, report unknown outcomes,
+  and poll an idle inbox with backoff.
+
+### Changed
+
+- `list_task_comments` returns every body in full.
+- New agent connections start without money and documents, governance, or
+  public-sharing access; workspaces may require two-factor for owners and
+  admins (`ADMIN_MFA_REQUIRED`).
+
 ## [0.6.0] - 2026-11-02
 
 ### Added
