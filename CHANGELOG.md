@@ -6,6 +6,15 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.7.2] - 2026-11-04
+
+### Changed
+
+- Monitors: checks send the User-Agent
+  `Priorify.app-Monitor/1.0 (+https://priorify.app)`. A 403 with a bot-challenge
+  page means the site's firewall blocks the check; agents tell the owner to
+  allow that User-Agent instead of reporting the site as down.
+
 ## [0.7.1] - 2026-11-04
 
 ### Changed
