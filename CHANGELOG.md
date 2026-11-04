@@ -6,6 +6,17 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-11-04
+
+### Added
+
+- Architecture: agents record what starts a flow as `people`, `schedule` or
+  `webhook` components (kind `trigger`, with `trigger_detail`) joined to the
+  workload by a `triggers` relationship, fill `plan_tier`, `resource_identifier`,
+  region and endpoints, and call the new `get_architecture_flows` to check the
+  map reads correctly and to fix its `no_host`, `no_domain` and `no_trigger`
+  gaps.
+
 ## [0.8.0] - 2026-11-04
 
 ### Added
