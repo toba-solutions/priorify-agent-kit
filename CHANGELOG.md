@@ -6,6 +6,17 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-11-04
+
+### Added
+
+- Monitors: `list_monitors` returns `reliability` (uptime over 24 hours, 7 days
+  and 30 days, downtime, any open incident) and `callouts` per monitor, and the
+  new `list_monitor_incidents` says when and why a monitor was down. Status
+  follows scheduled checks; a passing Run now does not mean scheduled checks
+  recovered, and uptime and incidents ignore manual checks and evaluation
+  errors.
+
 ## [0.7.2] - 2026-11-04
 
 ### Changed
