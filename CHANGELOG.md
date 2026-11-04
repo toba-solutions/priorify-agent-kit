@@ -6,6 +6,15 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.7.1] - 2026-11-04
+
+### Changed
+
+- Monitors: every plan schedules checks, and `list_monitors` returns
+  `scheduled_checks` saying whether active monitors run on their schedules
+  and why not. Agents tell the person the reason and use `run_monitor_check`
+  instead of promising a schedule that will not run.
+
 ## [0.7.0] - 2026-11-03
 
 ### Added
