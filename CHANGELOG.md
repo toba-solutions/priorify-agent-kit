@@ -6,6 +6,34 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-11-05
+
+0.11.0 — priorify-posture skill: report server posture, findings, task conversion.
+
+### Added
+
+- New `priorify-posture` skill with a read-only collector,
+  `scripts/collect-posture.sh`, for Ubuntu and Debian servers. It prints one
+  JSON snapshot (patching, SSH and firewall settings, public ports, failed
+  logins, resources, containers, packages and the TLS expiry of the hostnames
+  passed to it) and leaves out or marks `unknown` what it cannot read.
+- Agents find the server's `compute_host` component (one report per server,
+  containers included), report with `report_component_posture`, read
+  `list_component_posture` and `list_component_findings`, change a finding
+  with `update_component_finding`, turn one into a task with
+  `convert_finding_to_task` or link an existing task with a `fixes`
+  `record_link`, and read the rules with `get_posture_catalog`. They always
+  ask for approval with `request_work_intervention` before installing
+  updates, rebooting or changing firewall or SSH settings, then report again
+  so the finding closes itself. A `posture_report_request` work item is
+  answered with one report.
+- Coverage is evidence: a catalogue finding closes only when the snapshot
+  carries its fields, a certificate finding only for a hostname probed with
+  its expiry (the collector lists an unreachable hostname without one), and
+  `covered_rules` takes `custom.*` keys only. `remove_record_link` with a
+  linked task's `link_id` unlinks it.
+- `priorify-product-operations` points server posture work at the new skill.
+
 ## [0.10.0] - 2026-11-05
 
 ### Added

@@ -1,0 +1,13 @@
+interface:
+  display_name: "Priorify.app Server Posture"
+  short_description: "Report a server's posture and fix its findings"
+  brand_color: "#C86B46"
+  default_prompt: "Use $priorify-posture to report this server's posture to Priorify.app and summarize what needs attention."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "priorify"
+      description: "Priorify.app's permission-scoped posture and findings server"
+      transport: "streamable_http"
+      url: "https://priorify.app/mcp"

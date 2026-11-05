@@ -22,7 +22,7 @@ https://priorify.app/mcp
 
 Objectives:
 1. Verify that this client can install or load the correct package.
-2. Verify that all four Priorify.app skills are discoverable and behave as written.
+2. Verify that all five Priorify.app skills are discoverable and behave as written.
 3. Verify OAuth, permission boundaries, safe reads and writes, reconnection, and
    failure handling using a dedicated test workspace.
 4. Produce a concise, reproducible, secret-free test report.
@@ -82,6 +82,7 @@ Phase 2 — Install and validate the package
    - priorify-social-planning
    - priorify-agent-work
    - priorify-agent-sessions
+   - priorify-posture
    Report unrelated pre-existing skills separately with their source; do not
    attribute them to the kit. A legacy `priorify-work` skill is not part of this
    package and should be disabled before behavioral testing.

@@ -32,6 +32,7 @@ workspace, product, capability, and approval boundaries selected by the user.
 | [`priorify-social-planning`](skills/priorify-social-planning/SKILL.md) | Review and maintain owned social calendars without pretending to publish externally. |
 | [`priorify-agent-work`](skills/priorify-agent-work/SKILL.md) | Claim delegated work, report safe progress, request intervention, and return durable results. |
 | [`priorify-agent-sessions`](skills/priorify-agent-sessions/SKILL.md) | Report what a chat is doing: start a session, report milestones, ask a person to decide and wait for the answer on the board, and end it. |
+| [`priorify-posture`](skills/priorify-posture/SKILL.md) | Report a server's security and operations posture with a read-only collector, read its findings, and fix them through tasks with a person's approval first. |
 
 ### Report your chats
 
@@ -118,7 +119,7 @@ new session. Disabling and re-enabling the CLI entry leaves the current
 session's cached tool list in place.
 If `grok inspect` shows a pre-existing `priorify-work` skill, disable that legacy
 skill at its source before testing this kit; it is not part of Priorify.app Agent
-Kit and can otherwise compete with the four canonical skills.
+Kit and can otherwise compete with the five canonical skills.
 
 #### Agent Skills fallback
 

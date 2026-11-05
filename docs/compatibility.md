@@ -38,6 +38,7 @@ that owns it, or test with a clean profile, so it cannot compete with:
 - `priorify-social-planning`
 - `priorify-agent-work`
 - `priorify-agent-sessions`
+- `priorify-posture`
 
 Client output such as `1 skill dir(s)` refers to the plugin's one top-level
 `skills/` directory, not the number of `SKILL.md` files beneath it. Likewise,
