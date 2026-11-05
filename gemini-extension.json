@@ -1,6 +1,6 @@
 {
   "name": "priorify",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Connect Gemini CLI to permission-scoped Priorify.app product operations.",
   "mcpServers": {
     "priorify": {

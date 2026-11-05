@@ -6,6 +6,18 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-11-05
+
+### Added
+
+- Task mentions: `list_tasks` takes `mentions` (`unread` or `any`) and returns
+  `unread_mentions` and `task_number`; `mark_task_mentions_read` takes
+  `read: false`; inbox mentions carry `author_agent_name`; `list_notifications`
+  takes `notification_type`. An agent sees only its own mentions, and
+  mentioning the person who connected it notifies them.
+- Task references: `list_tasks` `query` and `search_workspace` find a task by
+  `TASK-78`, `task 78` or `#78`.
+
 ## [0.9.0] - 2026-11-04
 
 ### Added
