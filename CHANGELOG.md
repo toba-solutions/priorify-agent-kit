@@ -6,6 +6,22 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-11-16
+
+0.12.0 — board reviews: task counts, value lists, activity windows and TASK-n everywhere.
+
+### Added
+
+- `priorify-product-operations` teaches `count_tasks` (totals and groups by
+  status, priority, category, owner, executor, label or origin) so agents
+  count before they list.
+- `list_tasks` and `count_tasks` filters: lists of statuses, priorities,
+  categories and owners, `status: "open"`, `waiting_on`, `updated_after` /
+  `updated_before` for what changed and stale tasks, `created_after` /
+  `created_before`, and `fields: "compact"` rows without descriptions.
+- `get_task`, and `TASK-78` / `#78` accepted wherever a tool takes a task's
+  id next to `product_id`.
+
 ## [0.11.0] - 2026-11-05
 
 0.11.0 — priorify-posture skill: report server posture, findings, task conversion.
