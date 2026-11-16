@@ -6,6 +6,17 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-11-16
+
+0.13.0 — search task text: titles, descriptions and comments.
+
+### Added
+
+- `priorify-product-operations` teaches `search` on `list_tasks` and
+  `count_tasks`: a phrase in titles, descriptions or live comments, with
+  `matched_in` and `match_excerpt` on each row, and `SEARCH_TOO_BROAD` when
+  comments on too many tasks match.
+
 ## [0.12.0] - 2026-11-16
 
 0.12.0 — board reviews: task counts, value lists, activity windows and TASK-n everywhere.
