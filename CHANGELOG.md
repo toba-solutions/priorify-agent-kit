@@ -6,6 +6,17 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.14.0] - 2026-11-16
+
+0.14.0 — short links: tasks carry their /app/<workspace>/TASK-n url.
+
+### Added
+
+- `priorify-product-operations` teaches the `url` on tasks from `get_task`,
+  `list_tasks` and `put_task`, and the short screen links
+  `/app/<workspace>/<product or all>/<screen>`: paste the `url` instead of
+  building links with ids.
+
 ## [0.13.0] - 2026-11-16
 
 0.13.0 — search task text: titles, descriptions and comments.
