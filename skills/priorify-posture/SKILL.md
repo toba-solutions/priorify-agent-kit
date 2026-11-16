@@ -1,11 +1,11 @@
 ---
 name: priorify-posture
-description: Report a server's security and operations posture to Priorify.app and act on its findings. Use when an agent can reach a server over SSH or a local shell, when a routine named "Server posture" is claimed, or when a task or work item asks to fix a finding.
+description: Report a server's security and operations posture, or a repository's dependencies, to Priorify.app and act on its findings, including known vulnerabilities. Use when an agent can reach a server over SSH or a local shell, works in an app's repository, when a routine named "Server posture" is claimed, or when a task or work item asks to fix a finding.
 ---
 
 # Priorify.app Server Posture
 
-Priorify.app keeps one posture report per server and turns it into findings: patching, exposure, attacks, resources, supply chain and domains. You collect the facts on the server and report them; Priorify.app's rule catalogue decides what is a finding and how severe it is. Reading and reporting need the product's `monitoring` grant (read to list, write to report or change a finding); creating a task also needs `tasks` write.
+Priorify.app keeps one posture report per server, and per app whose repository reports its dependencies, and turns it into findings: patching, exposure, attacks, resources, supply chain (known vulnerabilities in installed packages and locked dependencies included) and domains. You collect the facts on the server and report them; Priorify.app's rule catalogue decides what is a finding and how severe it is. Reading and reporting need the product's `monitoring` grant (read to list, write to report or change a finding); creating a task also needs `tasks` write.
 
 ## Report a server
 
@@ -21,6 +21,23 @@ Priorify.app keeps one posture report per server and turns it into findings: pat
 4. Call `report_component_posture` with `product_id`, `component_id`, a fresh `idempotency_key`, the printed JSON as `snapshot`, and a short `reporter_label` naming your agent. The snapshot carries counts and settings only: at most 1 MiB, 5000 inventory entries, 100 containers, 100 public ports, 20 disks, 50 domains. Never add file contents, environment variables, keys or logs.
 5. Read the result: `opened`, `updated` and `fixed` counts, the finding ids, and `issues`. A finding is fixed when its rule is covered and it is no longer reported: a catalogue rule is covered when its fields are in the snapshot, and a certificate finding only for a hostname the snapshot lists with its `tls_expires_at` (the collector lists a hostname it could not probe without an expiry, so its finding stays open). `covered_rules` adds only `custom.*` keys you checked and found clean; a catalogue key there is ignored and named in `issues`. `superseded: true` means a newer report is already stored and yours changed nothing.
 6. Call `list_component_findings` with the `component_id` to read what needs attention, worst first, with linked tasks and each finding's state. Tell the person what is new and what needs them.
+
+The result also carries `vulnerabilities`: Priorify.app matched the snapshot's `inventory` against OSV (osv.dev) and CISA's Known Exploited Vulnerabilities. `status` is `complete`, `partial` (some advisories wait for the next report, which continues), `unavailable` (OSV did not answer; vulnerability findings stay as they were) or `skipped`, with `packages_checked`, `vulnerable_packages`, `findings` and `exploited`. A package version becomes one `supply_chain.known_vulnerability` finding only when an advisory is actively exploited (always critical) or is high or critical with a fixed version; its evidence names the advisories, the installed version and the version that fixes it. Fix it by updating that package; the next report closes the finding.
+
+## Report a repository's dependencies
+
+When you work in an app's repository, report its locked dependencies so known vulnerabilities in them show up on the Security page.
+
+1. Find the app's component with `list_domain_records` (`architecture_component`): the web application, API backend, backend service, mobile app or background worker this repository builds. If there is none, create one with `put_domain_record` and say so.
+2. Run the collector from the repository root. It is read-only, reads only lockfiles (`package-lock.json`, `yarn.lock`, `pnpm-lock.yaml`, `requirements*.txt`, `poetry.lock`, `uv.lock`, `Pipfile.lock`, `Cargo.lock`, `go.sum`), makes no network calls, and prints one JSON object with `inventory`:
+
+   ```bash
+   node scripts/collect-dependencies.mjs .
+   ```
+
+   The script sits next to this file at `scripts/collect-dependencies.mjs`; read it before running it if you took it from the Agent Kit repository.
+3. Call `report_component_posture` with the app's `component_id`, a fresh `idempotency_key`, the printed JSON as `snapshot` and your `reporter_label`. An inventory-only snapshot touches no server rule.
+4. Read `vulnerabilities` in the result, then `list_component_findings` for the component. Tell the person which packages to update and to which version. Report again after a dependency update so fixed findings close.
 
 Catalogue rules derive findings from the snapshot. A finding you add with a catalogue `rule_key` can only add words (title, summary, references, evidence) to a finding the snapshot derived; a catalogue key the snapshot did not derive is dropped and named in `issues`. A reporter without a snapshot, or one reporting something the catalogue does not cover, uses `custom.*` keys and must give `severity`, `category` and `title`. Call `get_posture_catalog` for the rule list, each rule's fields and severity, and the snapshot contract.
 

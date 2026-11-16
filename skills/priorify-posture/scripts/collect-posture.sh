@@ -164,11 +164,13 @@ if have docker; then
 fi
 [ ${#dk[@]} -gt 0 ] && add containers "[$(join "${dk[@]}")]"
 
-# Inventory (installed packages)
+# Inventory (installed packages), by source package: Debian and Ubuntu
+# security advisories name source packages (openssl, not libssl3), so
+# Priorify.app's known-vulnerability check matches these.
 case "$os_id" in ubuntu|debian)
   if have dpkg-query; then
-    inv=$(dpkg-query -W -f '${db:Status-Abbrev} ${Package} ${Version}\n' 2>/dev/null | awk -v eco="$os_id" '
-      $1=="ii" && n<5000 { n++; gsub(/["\\]/, "", $2); gsub(/["\\]/, "", $3)
+    inv=$(dpkg-query -W -f '${db:Status-Abbrev} ${source:Package} ${source:Version}\n' 2>/dev/null | awk -v eco="$os_id" '
+      $1=="ii" && !seen[$2 " " $3]++ && n<5000 { n++; gsub(/["\\]/, "", $2); gsub(/["\\]/, "", $3)
         printf "%s{\"ecosystem\":\"%s\",\"name\":\"%s\",\"version\":\"%s\"}", (n>1 ? "," : ""), eco, substr($2,1,200), substr($3,1,100) }')
     [ -n "$inv" ] && add inventory "[$inv]"
   fi ;;

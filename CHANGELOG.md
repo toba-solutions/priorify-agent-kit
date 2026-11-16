@@ -6,6 +6,24 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.17.0] - 2026-11-16
+
+0.17.0 — known vulnerabilities in servers and repositories.
+
+### Added
+
+- `priorify-posture` teaches the `vulnerabilities` summary of
+  `report_component_posture` and the `supply_chain.known_vulnerability`
+  findings Priorify.app raises from OSV and CISA KEV.
+- New read-only `scripts/collect-dependencies.mjs`: a repository's locked
+  dependencies (npm, yarn, pnpm, pip, Poetry, uv, Pipenv, Cargo, Go) as an
+  inventory-only snapshot, reported on the app's component.
+
+### Changed
+
+- `scripts/collect-posture.sh` reports Debian and Ubuntu packages by source
+  package and version, which is what security advisories name.
+
 ## [0.16.0] - 2026-11-16
 
 0.16.0 — the task activity feed: what changed, not just which tasks.
