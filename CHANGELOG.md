@@ -6,6 +6,17 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.15.0] - 2026-11-16
+
+0.15.0 — task lines: a whole board under 8 KB.
+
+### Added
+
+- `priorify-product-operations` teaches `fields: "lines"` on `list_tasks`:
+  one short line per task, so 100 tasks stay under 8 KB for clients that cut
+  long answers. Compact rows no longer carry `url`; `get_task` and full rows
+  still do.
+
 ## [0.14.0] - 2026-11-16
 
 0.14.0 — short links: tasks carry their /app/<workspace>/TASK-n url.
