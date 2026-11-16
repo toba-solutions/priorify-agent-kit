@@ -6,6 +6,17 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.16.0] - 2026-11-16
+
+0.16.0 — the task activity feed: what changed, not just which tasks.
+
+### Added
+
+- `priorify-product-operations` teaches `list_task_activity`: status moves
+  with from and to, new tasks, field changes, comments, links and more, with
+  who and when, narrowed by `since`, `kinds` and `task_id`, and as short
+  `lines` for daily checks.
+
 ## [0.15.0] - 2026-11-16
 
 0.15.0 — task lines: a whole board under 8 KB.
