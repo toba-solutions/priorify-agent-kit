@@ -6,6 +6,10 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.19.0] - 2026-11-17
+
+- Teach agents to prepare up to 100 invoice drafts, correct individual rows, and confirm a reviewed selection together in Priorify.app.
+
 ## [0.18.0] - 2026-11-17
 
 - Teach agents to file workspace bills, preview shared costs, confirm allocations, manage rules, handle private invoice files, and undo a posting in Priorify.app.
