@@ -6,6 +6,10 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.22.0] - 2026-11-19
+
+- Teach agents the workspace budget in Priorify.app: complete workspace totals with company limits, every app ranked by spend with its share, run-rate and own limit, costs that belong to no app as workspace expenses with receipts, and splitting a workspace expense across apps through a shared bill.
+
 ## [0.21.0] - 2026-11-19
 
 - Teach agents to answer what a product costs per month from the budget overview's run-rate, which counts monthly invoices and shared-bill shares by how often they were charged, flags costs that may have stopped, and to read the monthly trend's rolling average.
