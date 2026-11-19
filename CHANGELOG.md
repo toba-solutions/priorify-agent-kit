@@ -6,6 +6,10 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.20.0] - 2026-11-19
+
+- Teach agents to read where a product's money goes (spend by vendor, category and month), which entries miss a receipt, and which may be duplicates, from the budget overview in Priorify.app.
+
 ## [0.19.0] - 2026-11-17
 
 - Teach agents to prepare up to 100 invoice drafts, correct individual rows, and confirm a reviewed selection together in Priorify.app.
