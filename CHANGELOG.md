@@ -6,6 +6,10 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.21.0] - 2026-11-19
+
+- Teach agents to answer what a product costs per month from the budget overview's run-rate, which counts monthly invoices and shared-bill shares by how often they were charged, flags costs that may have stopped, and to read the monthly trend's rolling average.
+
 ## [0.20.0] - 2026-11-19
 
 - Teach agents to read where a product's money goes (spend by vendor, category and month), which entries miss a receipt, and which may be duplicates, from the budget overview in Priorify.app.
