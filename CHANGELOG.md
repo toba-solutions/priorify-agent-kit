@@ -6,6 +6,11 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.25.0] - 2026-11-23
+
+- Teach agents that a mobile app needs no hosting on the Architecture map (it runs on people's devices) and that a build pipeline is drawn as a card until something runs on it.
+- Teach agents to check a hand-built posture snapshot against `snapshot_schema` from `get_posture_catalog`, and that open vulnerable packages count on the Patching card.
+
 ## [0.24.0] - 2026-11-23
 
 - Teach agents that `put_project_task` creates a task with every task field in one call, how to record an earlier completion (`put_domain_record` with `completed_at`), that `add_task_comment` takes an `idempotency_key` so retries never post twice, and how to record a recurring cost (one-time entries per invoice or one entry with a billing frequency, never both).
