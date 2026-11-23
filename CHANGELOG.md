@@ -6,6 +6,10 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.24.0] - 2026-11-23
+
+- Teach agents that `put_project_task` creates a task with every task field in one call, how to record an earlier completion (`put_domain_record` with `completed_at`), that `add_task_comment` takes an `idempotency_key` so retries never post twice, and how to record a recurring cost (one-time entries per invoice or one entry with a billing frequency, never both).
+
 ## [0.23.0] - 2026-11-23
 
 - Teach agents to write Knowledge pages as Markdown with `put_knowledge_page` (converted like the app's Import Markdown) instead of hand-building the structured body, which fields a new Knowledge collection needs, and that invalid Knowledge input now returns `INVALID_INPUT` with each field.
