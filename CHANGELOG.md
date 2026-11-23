@@ -6,6 +6,11 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.23.0] - 2026-11-23
+
+- Teach agents to write Knowledge pages as Markdown with `put_knowledge_page` (converted like the app's Import Markdown) instead of hand-building the structured body, which fields a new Knowledge collection needs, and that invalid Knowledge input now returns `INVALID_INPUT` with each field.
+- Teach agents that a task's `assignee_id` is always a person (a workspace member from `list_workspace_access`): an agent task has no person assignee, and an agent's id is refused instead of silently dropped.
+
 ## [0.22.0] - 2026-11-19
 
 - Teach agents the workspace budget in Priorify.app: complete workspace totals with company limits, every app ranked by spend with its share, run-rate and own limit, costs that belong to no app as workspace expenses with receipts, and splitting a workspace expense across apps through a shared bill.
